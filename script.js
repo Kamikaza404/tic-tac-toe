@@ -5,15 +5,14 @@ let cells = Array(9);
 let state; // 0 = finished; 1 = X turn; 2 = O turn
 
 
-// Something something whatever
 function drawField() {
 	for (let i = 0; i < 9; i++) {
 		document.getElementById(String(i)).textContent = cells[i];
 	}
 }
 
-function restartGame(meme) {
-	cells.fill(meme);
+function restartGame() {
+	cells.fill("_");
 	gameText.textContent = "X turn";
 	state = 1;
 	drawField();
@@ -55,7 +54,7 @@ function checkForWin() {
 
 // Event listeners
 button.onclick = function() {
-	restartGame("_");
+	restartGame();
 }
 
 for (let i = 0; i < 9; i++) {
@@ -80,4 +79,4 @@ for (let i = 0; i < 9; i++) {
 
 
 // START THE GAME NOW!
-restartGame("_");
+restartGame();
